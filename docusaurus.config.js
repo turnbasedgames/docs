@@ -9,7 +9,7 @@ const config = {
   title: 'Turn-Based-Games',
   tagline: 'Build massive multiplayer turn-based games',
   url: 'https://turnbasedgames.github.io', // TODO: link to official website
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico', // TODO: replace with turn based games logo
