@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Turn-Based-Games',
   tagline: 'Build massive multiplayer turn-based games',
-  url: 'https://github.com/turnbasedgames', // TODO: link to official website
+  url: 'https://turnbasedgames.github.io', // TODO: link to official website
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
