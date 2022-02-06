@@ -15,7 +15,8 @@ const config = {
   favicon: 'img/favicon.ico', // TODO: replace with turn based games logo
   organizationName: 'turnbasedgames',
   projectName: 'docs',
-
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
   presets: [
     [
       'classic',
