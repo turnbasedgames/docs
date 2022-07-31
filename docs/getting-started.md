@@ -22,7 +22,7 @@ The tutorial is split in several sections:
 
 ## Setting up your local development environment
 
-### Pre-requesites
+### Prerequisites
 
 - Install [NodeJS](https://nodejs.org/en/) and [Git](https://git-scm.com/video/what-is-version-control)
 - Basic understanding of [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript#tutorials) and [ReactJS](https://reactjs.org/tutorial/tutorial.html)
@@ -43,6 +43,12 @@ You should see the Urturn **Runner** at work, which allows you to develop your g
 Join our [Discord](https://discord.gg/U9EEMD4TR4) and ask questions if you had trouble setting up. The developers of Urturn and the community are here to help you.
 
 ## Template files walkthrough
+
+### Project file structure
+
+```bash
+TODO:KEVIN need to put the file structure of tictactoe here using tree mate
+```
 
 ### Template backend
 
