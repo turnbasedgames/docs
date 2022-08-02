@@ -14,4 +14,4 @@ This tutorial is split into several sections:
 - [Walking through](template-files) the template files
 - [Implementing](implementing-logic) the core game logic
 - [Displaying](displaying-game) the game to the user
-- [Deploying](getting-started#deploying-the-game-to-production-and-play-with-your-friends) the game to production and play with your friends!
+- [Deploying](deploying) the game to production and play with your friends!
