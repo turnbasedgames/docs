@@ -28,7 +28,7 @@ Your game state is held in the [BoardGame](/docs/backend#boardgame) object. You 
       [null, null, null],
     ]",
     "winner": null
-  },
+  }
 }
 ```
 
@@ -55,7 +55,7 @@ function onRoomStart() {
         [null, null, null],
       ],
       winner: null
-    },
+    }
   };
 }
 ```
@@ -123,12 +123,12 @@ function getPlrMark(plr, plrs) {
 
 function isEndGame(board, plrs) {
   function getPlrFromMark(mark, plrs) {
-  return mark === 'X' ? plrs[0] : plrs[1];
-}
+    return mark === 'X' ? plrs[0] : plrs[1];
+  }
 
   function isWinningSequence(arr) {
-  return arr[0] != null && arr[0] === arr[1] && arr[1] === arr[2];
-}
+    return arr[0] !== null && arr[0] === arr[1] && arr[1] === arr[2];
+  }
 
   // check rows and cols
   for (let i = 0; i < board.length; i += 1) {
@@ -172,10 +172,8 @@ function onPlayerMove(plr, move, boardGame) {
 
   if (isEnd) {
     state.winner = winner;
-
     return { state, finished: true };
   }
-
   return { state };
 }
 ```
@@ -215,16 +213,16 @@ We will first extract the information we need from the board game state:
 
 ```jsx title="frontend/src/App.jsx"
 const {
-    state: {
-      board,
-    } = {
-      board: [
-        [null, null, null],
-        [null, null, null],
-        [null, null, null],
-      ],
-    },
-  } = boardGame;
+  state: {
+    board
+  } = {
+    board: [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ]
+  }
+} = boardGame;
 ```
 
 </TabItem>
@@ -251,16 +249,16 @@ function App() {
 
   console.log('boardGame:', boardGame);
 
-const {
+  const {
     state: {
-      board,
+      board
     } = {
       board: [
         [null, null, null],
         [null, null, null],
-        [null, null, null],
-      ],
-    },
+        [null, null, null]
+      ]
+    }
   } = boardGame;
 
   return (
@@ -288,7 +286,7 @@ Using our empty board game, we can render a simple tic-tac-toe board:
 ```jsx live
 function App(props) {
   return (
-   <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <Typography>
         <Stack margin={2} spacing={1} direction="row" justifyContent="center">
           <Box>
@@ -346,16 +344,16 @@ function App() {
 
   console.log('boardGame:', boardGame);
 
-const {
+  const {
     state: {
-      board,
+      board
     } = {
       board: [
         [null, null, null],
         [null, null, null],
         [null, null, null],
-      ],
-    },
+      ]
+    }
   } = boardGame;
 
   return (
@@ -438,16 +436,16 @@ function App() {
 
   console.log('boardGame:', boardGame);
 
-const {
+  const {
     state: {
-      board,
+      board
     } = {
       board: [
         [null, null, null],
         [null, null, null],
         [null, null, null],
-      ],
-    },
+      ]
+    }
   } = boardGame;
 
   return (

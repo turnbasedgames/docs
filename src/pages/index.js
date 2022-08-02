@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/getting-started/introduction">
-            Make Your First Game
+            Make your first game - 15 min ⏱️
           </Link>
         </div>
       </div>
