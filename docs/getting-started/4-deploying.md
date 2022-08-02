@@ -1,5 +1,5 @@
 ---
-title: Deploying the Game
+title: Deploying Your Game
 ---
 
 

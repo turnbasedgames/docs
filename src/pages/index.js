@@ -29,7 +29,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Build massive multiplayer games and focus just on your game | ${siteConfig.title}`}
+      title={`Quickly build multiplayer games - only four functions! | ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>

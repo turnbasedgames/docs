@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Urturn',
-  tagline: 'Build massive multiplayer turn-based games',
+  tagline: 'Quickly build multiplayer games - only four functions!',
   url: 'https://github.com/turnbasedgames', // TODO: link to official website
   baseUrl: '/',
   onBrokenLinks: 'throw',

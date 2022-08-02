@@ -72,7 +72,11 @@ A JSON object that your functions will return - contains the aspects of the Boar
 onRoomStart = () => BoardGameResult
 ```
 
-Runs when the room is first initialized (i.e. when a private room is created or a room is created for the matchmaking queue). Must return the BoardGameResult [link].
+Runs when the room is first initialized, as triggered by these actions:
+1. When a private room is created (player clicks *Create Private Room*)
+2. When a room is created for the matchmaking queue (player clicks *Play*)
+
+Must return the BoardGameResult [link].
 
 Use this function to initialize your board game state. [Tic Tac Toe Example]
 
@@ -92,7 +96,7 @@ Runs when a player joins the room, reveals the id of the player who joined and t
 onPlayerQuit = (player: string, boardGame: object) => BoardGameResult
 ```
 
-Runs when a player quits the game (i.e. they press the back button, close the browser, close the tab, etc.). Reveals the id of the player who quit and the current BoardGame. Must return the BoardGameResult [link].
+Runs when a player quits the game. A player **only** quits the game by manually clicking the ***quit*** button - closing the browser or tab will not end the game session. Reveals the id of the player who quit and the current BoardGame. Must return the BoardGameResult [link].
 
 Use this function to handle a player a quitting the game early - for example, in TicTacToe where once a game has started, if one of the player leaves they forfeit the game. [TicTacToe example]. ```onPlayerMove``` is handles the winning game move, ```onPlayerQuit``` handles a player leaving the game entirely.
 

@@ -4,14 +4,14 @@ title: Walking Through the Template Files
 
 ### index.js
 
-This is the "backend" for our game. It contains all of the logic that UrTurn needs to make the game playable. It currently contains four functions:
+This is the "backend" for your game. It contains all of the logic that UrTurn needs to make the game playable. It currently contains four functions:
 
 1. onRoomStart
 2. onPlayerJoin
 3. onPlayerQuit
 4. onPlayerMove
 
-We'll go over the logic that needs to be implemented in the next section.
+We'll go over what these functions do and how we will implement them in the next section. Or you can [view their documentation](/docs/backend) directly.
 
 ### frontend
 
