@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Layout
       title={`Quickly build multiplayer games - only four functions! | ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Quickly build multiplayer games - only four functions!">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
