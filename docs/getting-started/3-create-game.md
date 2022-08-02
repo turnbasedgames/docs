@@ -40,10 +40,9 @@ All of our game logic can be encompassed by the following four functions:
 
 #### 1. onRoomStart
 
-This function will be called whenever a [room is created](/docs/backend#onroomstart). When the game starts, we want to initialize our empty board game state, which includes the following for tic-tac-toe:
+This function will be called whenever a [room is created](/docs/backend#onroomstart). When the game starts, we want to initialize our empty BoardGame state, which includes the following for tic-tac-toe:
 
 1. The Board: A 3x3 square, initialized with null values.
-
 2. The Winner: The winner's ID, if there is a winner. Initially null.
 
 ```js title="index.js"
@@ -66,7 +65,7 @@ function onRoomStart() {
 
 This function will be called whenever a player actually joins the game. It provides us with the ID of the player who joined as well as the current [BoardGame state](/docs/backend#boardgame).
 
-If this is the first player to join, we will just return an empty object as there are no changes to the game state. If this is the second player to join, then the game has all the necessary players and should be marked as unjoinable.
+If this is the first player to join, we will just return an empty object. If this is the second player to join, then the game has all the necessary players and should be marked as unjoinable.
 
 ```js title="index.js"
 function onPlayerJoin(plr, boardGame) {
@@ -79,27 +78,8 @@ function onPlayerJoin(plr, boardGame) {
 }
 ```
 
-#### 3. onPlayerQuit
 
-This function will be called whenever a player [quits the game](/docs/backend#onplayerquit). It provides us with the ID of the player who quit and the current board game state.
-
-For tic-tac-toe, the game will end if one of the players quits. The game will be marked as unjoinable and finished, and the remaining player will be marked the winner.
-
-```js title="index.js"
-function onPlayerQuit(plr, boardGame) {
-  const { state, players } = boardGame;
-  state.status = "endGame";
-
-  if (players.length === 1) {
-    const [winner] = players;
-    state.winner = winner;
-    return { state, joinable: false, finished: true };
-  }
-  return { joinable: false, finished: true };
-}
-```
-
-#### 4. onPlayerMove
+#### 3. onPlayerMove
 
 This function will be called whenever a player makes a move. It provides us with the ID of the player who made the move, the move object, and the current board game state. We can define the move object as any valid JSON object - for tic-tac-toe, it will be an object containing the x- and y-coordinates of the square they selected.
 
@@ -108,7 +88,7 @@ After the move is completed, if we determine the game is over and there is a win
 <Tabs>
 <TabItem value="snippet" label="Snippet">
 
-```js
+```js title="index.js"
 function onPlayerMove(plr, move, boardGame) {
   const { state, players } = boardGame;
   const { board, plrToMoveIndex } = state;
@@ -134,7 +114,7 @@ function onPlayerMove(plr, move, boardGame) {
 </TabItem>
 <TabItem value="full" label="Full Code">
 
-```js
+```js title="index.js"
 function getPlrMark(plr, plrs) {
   if (plr === plrs[0]) {
     return 'X';
@@ -204,6 +184,26 @@ function onPlayerMove(plr, move, boardGame) {
 </TabItem>
 </Tabs>
 
+#### 4. onPlayerQuit
+
+This function will be called whenever a player [quits the game](/docs/backend#onplayerquit). It provides us with the ID of the player who quit and the current board game state.
+
+For tic-tac-toe, the game will end if one of the players quits. The game will be marked as unjoinable and finished, and the remaining player will be marked the winner.
+
+```js title="index.js"
+function onPlayerQuit(plr, boardGame) {
+  const { state, players } = boardGame;
+  state.status = "endGame";
+
+  if (players.length === 1) {
+    const [winner] = players;
+    state.winner = winner;
+    return { state, joinable: false, finished: true };
+  }
+  return { joinable: false, finished: true };
+}
+```
+
 ## Frontend
 
 This section will go over how to implement the frontend for our tic-tac-toe so that it is visible to the user. We will be adding our components to ```frontend/src/App.jsx```. This file already contains some logic for you to access the [BoardGame](/docs/backend#boardgame) object and for any state changes to make to be propagated to your backend.
@@ -219,7 +219,6 @@ We will first extract the information we need from the board game state:
 const {
     state: {
       board,
-      winner,
     } = {
       board: [
         [null, null, null],
@@ -227,8 +226,6 @@ const {
         [null, null, null],
       ],
     },
-    players = [],
-    finished
   } = boardGame;
 ```
 
@@ -256,10 +253,9 @@ function App() {
 
   console.log('boardGame:', boardGame);
 
-  const {
+const {
     state: {
       board,
-      winner,
     } = {
       board: [
         [null, null, null],
@@ -267,8 +263,6 @@ function App() {
         [null, null, null],
       ],
     },
-    players = [],
-    finished
   } = boardGame;
 
   return (
@@ -314,7 +308,11 @@ function App(props) {
                       height: '100px',
                       width: '100px',
                     }}
-                  />
+                  >
+                    <Typography color="text.primary" fontSize="60px">
+                      {val}
+                    </Typography>
+                  </Stack>
                 ))}
               </Stack>
             ))}
@@ -331,7 +329,7 @@ function App(props) {
 
 ```js
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider, Typography } from '@mui/material';
+import { ThemeProvider, Typography, Stack, Box } from '@mui/material';
 
 import client, { events } from '@urturn/client';
 import theme from './theme';
@@ -350,10 +348,9 @@ function App() {
 
   console.log('boardGame:', boardGame);
 
-  const {
+const {
     state: {
       board,
-      winner,
     } = {
       board: [
         [null, null, null],
@@ -361,8 +358,6 @@ function App() {
         [null, null, null],
       ],
     },
-    players = [],
-    finished
   } = boardGame;
 
   return (
@@ -384,7 +379,11 @@ function App() {
                       height: '100px',
                       width: '100px',
                     }}
-                  />
+                  >
+                    <Typography color="text.primary" fontSize="60px">
+                      {val}
+                    </Typography>
+                  </Stack>
                 ))}
               </Stack>
             ))}
@@ -422,7 +421,7 @@ onClick={async (event) => {
 
 ```js
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider, Typography } from '@mui/material';
+import { ThemeProvider, Typography, Stack, Box } from '@mui/material';
 
 import client, { events } from '@urturn/client';
 import theme from './theme';
@@ -441,10 +440,9 @@ function App() {
 
   console.log('boardGame:', boardGame);
 
-  const {
+const {
     state: {
       board,
-      winner,
     } = {
       board: [
         [null, null, null],
@@ -452,8 +450,6 @@ function App() {
         [null, null, null],
       ],
     },
-    players = [],
-    finished
   } = boardGame;
 
   return (
@@ -480,7 +476,11 @@ function App() {
                       const move = { x: rowNum, y: colNum };
                       await client.makeMove(move);
                     }}
-                  />
+                  >
+                    <Typography color="text.primary" fontSize="60px">
+                      {val}
+                    </Typography>
+                  </Stack>
                 ))}
               </Stack>
             ))}
@@ -496,3 +496,15 @@ export default App;
 
 </TabItem>
 </Tabs>
+
+## Testing Your Game
+
+We're now ready to test our game! In the Runner, you should see the empty board game state. Click **Add Player** to add a player to the game. This will open a new tab that simulates what the player will see upon joining.
+
+In our game state, "joinable" still says true. We can add an additional player and see that "joinable" is now set to false, as defined in our onPlayerJoin function.
+
+You can now simulate playing tic-tac-toe between the two tabs!
+
+**NOTE ABOUT THE RUNNER**: You currently must refresh the Runner to see all "state" specific changes.
+
+Here is the finish tic-tac-toe game in production, which includes error handling, move validation, player validation, and more!

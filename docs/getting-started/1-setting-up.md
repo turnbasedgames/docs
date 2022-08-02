@@ -17,4 +17,4 @@ npm install
 npm run dev
 ```
 
-You should see the Urturn **Runner** at work, which allows you to develop your games both locally and offline. You will see the initial server console, with no players in the game yet.
+You should see the UrTurn **Runner** at work, which allows you to develop your games both locally and offline. You will see the initial server console, with no players in the game yet.
