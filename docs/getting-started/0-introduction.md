@@ -12,6 +12,5 @@ This tutorial is split into several sections:
 
 - [Setting up](setting-up) your local development environment
 - [Walking through](template-files) the template files
-- [Implementing](implementing-logic) the core game logic
-- [Displaying](displaying-game) the game to the user
+- [Creating](create-game) your first game: tic-tac-toe
 - [Deploying](deploying) the game to production and play with your friends!
