@@ -17,6 +17,7 @@ const config = {
   projectName: 'docs',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
+  themes: ['@docusaurus/theme-live-codeblock'],
   presets: [
     [
       'classic',
@@ -50,7 +51,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'getting-started',
+            docId: 'getting-started/introduction',
             position: 'left',
             label: 'Docs',
           },
@@ -70,7 +71,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/getting-started',
+                to: '/docs/getting started',
               },
             ],
           },
@@ -106,7 +107,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
+      }
     }),
 };
 
