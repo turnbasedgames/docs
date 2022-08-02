@@ -49,7 +49,6 @@ This function will be called whenever a [room is created](/docs/backend#onroomst
 function onRoomStart() {
   return {
     state: {
-      status: "preGame",
       board: [
         [null, null, null],
         [null, null, null],
@@ -69,7 +68,7 @@ If this is the first player to join, we will just return an empty object. If thi
 
 ```js title="index.js"
 function onPlayerJoin(plr, boardGame) {
-  const { players, state } = boardGame;
+  const { players } = boardGame;
 
   if (players.length === 2) {
     return { joinable: false };
@@ -193,7 +192,6 @@ For tic-tac-toe, the game will end if one of the players quits. The game will be
 ```js title="index.js"
 function onPlayerQuit(plr, boardGame) {
   const { state, players } = boardGame;
-  state.status = "endGame";
 
   if (players.length === 1) {
     const [winner] = players;
