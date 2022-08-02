@@ -1,12 +1,10 @@
 ---
-title: Making Your First Game
+title: Overview
 ---
-
-## Overview
 
 This tutorial is **comprehensive**.
 
-You will build the game [TicTacToe](https://www.urturn.app/games/626eac7c65667f00160a6b42) from scratch and deploy it to UrTurn where you will immediately be able to share it and play with your friends.
+You will build the game [tic-tac-toe](https://www.urturn.app/games/626eac7c65667f00160a6b42) from scratch and deploy it to UrTurn where you will immediately be able to share it and play with your friends.
 
 This tutorial is split into several sections:
 
