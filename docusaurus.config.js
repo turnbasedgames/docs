@@ -42,6 +42,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+      },
       navbar: {
         title: 'UrTurn',
         logo: {
@@ -107,11 +110,6 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      themeConfig: {
-        colorMode: {
-          defaultMode: 'dark',
-        },
       },
     }),
 };
