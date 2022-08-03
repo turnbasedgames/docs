@@ -24,25 +24,25 @@ A JSON object provided to you that contains information about the current board 
 
 #### joinable: *boolean*
 
-Initially true, can be modified. 
+Initially true. 
 
 If true, new users will be able to join this game instance. If false, this game instance will not be included in the matchmaking queue and new players will be blocked from joining a private room with this game instance.
 
 #### finished: *boolean*
 
-Initially false, can be modified. 
+Initially false. 
 
 If true, no new changes can be made to the board game state and the game instance will show in the "Played Games" list for all present players. If false, the game will show in the "Active Games" list for players.
 
 #### players: *[ string ]*
 
-Initially empty, cannot be modified.
+Initially empty, read-only.
 
 A list of the IDs of all the players in the game. Will update as players join and leave the game instance. 
 
 #### version: *int*
 
-Initially 0, cannot be modified.
+Initially 0, read-only.
 
 The current version of the board game state. Incremented with every change. Is used to keep all players in sync with the current board game state.
 
