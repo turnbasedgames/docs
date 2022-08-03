@@ -26,7 +26,7 @@ A JSON object provided to you that contains information about the current board 
 
 Initially true, can be modified. 
 
-If true, new users will be able to join this game instance. If false, this game instance will not be included in the matchmaking queue and new players will be blocked from joining a private room with this game instance.
+If true, new users will be able to join this game instance. If false, new users can not join this game instance via a private room or matchmaking.
 
 #### finished: *boolean*
 
