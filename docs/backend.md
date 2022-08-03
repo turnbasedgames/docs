@@ -32,13 +32,13 @@ If true, new users will be able to join this game instance. If false, this game 
 
 Initially false. 
 
-If true, no new changes can be made to the board game state and the game instance will show in the "Played Games" list for all present players. If false, the game will show in the "Active Games" list for players.
+If true, no new changes can be made to the board game state, no new players can join, and the game instance will show in the "Played Games" list. If false, the game will show in the "Active Games" list for players.
 
 #### players: *[ string ]*
 
 Initially empty, read-only.
 
-A list of the IDs of all the players in the game. Will update as players join and leave the game instance. 
+A list of the IDs of all the players in the game in the order they joined. Will update as players join and leave the game instance. 
 
 #### version: *int*
 
