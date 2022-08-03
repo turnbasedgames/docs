@@ -19,6 +19,6 @@ Before getting into an example, it is critical to note the importance of the `ma
 
 `old state -> makeMove -> new state`
 
-In the `checkers` repo, there exists [use](https://github.com/turnbasedgames/tictactoe/blob/e36ab75d5e9c9a4165b17070971b79dae93585b2/frontend/src/App.jsx#L87) of the `makeMove` method.
+In the `tictactoe` repo, there exists [use](https://github.com/turnbasedgames/tictactoe/blob/e36ab75d5e9c9a4165b17070971b79dae93585b2/frontend/src/App.jsx#L87) of the `makeMove` method.
 
 The `getBoardGame` method is used to get the initial state of the game upon start up. It is up to you to perform updates to the game (via `makeMove`).
