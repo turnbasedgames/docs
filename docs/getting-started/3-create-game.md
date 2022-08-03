@@ -501,6 +501,10 @@ In our game state, "joinable" still says true. We can add an additional player a
 
 You can now simulate playing tic-tac-toe between the two tabs!
 
-**NOTE ABOUT THE RUNNER**: You currently must refresh the Runner to see all "state" specific changes.
+:::note
+
+You currently must refresh the Runner to see all "state" specific changes.
+
+:::
 
 Here is the finish tic-tac-toe game in production, which includes error handling, move validation, player validation, and more!
