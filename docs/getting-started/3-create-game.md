@@ -228,7 +228,7 @@ const {
 </TabItem>
 <TabItem value="full" label="Full Code">
 
-```js
+```js title="frontend/src/App.jsx"
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, Typography } from '@mui/material';
 
@@ -283,7 +283,7 @@ Using our empty board game, we can render a simple tic-tac-toe board:
 <Tabs>
 <TabItem value="snippet" label="Snippet">
 
-```jsx live
+```jsx title="frontend/src/App.jsx" live
 function App(props) {
   return (
     <ThemeProvider theme={theme}>
@@ -323,7 +323,7 @@ function App(props) {
 </TabItem>
 <TabItem value="full" label="Full Code">
 
-```js
+```js title="frontend/src/App.jsx"
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, Typography, Stack, Box } from '@mui/material';
 
@@ -404,7 +404,7 @@ We can now add in the ability for a player to make a move. We'll add an onClick 
 <Tabs>
 <TabItem value="snippet" label="Snippet">
 
-```js
+```js title="frontend/src/App.jsx"
 onClick={async (event) => {
   event.preventDefault();
   const move = { x: rowNum, y: colNum };
@@ -415,7 +415,7 @@ onClick={async (event) => {
 </TabItem>
 <TabItem value="full" label="Full Code">
 
-```js
+```js title="frontend/src/App.jsx"
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, Typography, Stack, Box } from '@mui/material';
 
@@ -507,4 +507,4 @@ You currently must refresh the Runner to see all "state" specific changes.
 
 :::
 
-Here is the finish tic-tac-toe game in production, which includes error handling, move validation, player validation, and more!
+[Here](https://github.com/turnbasedgames/tictactoe/tree/solution) is the finish tic-tac-toe game in production, which includes error handling, move validation, player validation, and more!

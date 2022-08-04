@@ -16,3 +16,8 @@ We'll go over what these functions do and how we will implement them in the next
 ### frontend
 
 This is where the frontend for our game will go. We are currently using React to create our frontend. We will be working inside the ```frontend/src``` folder to create our components. When we finish, we will run ```npm run build```, which will create a compiled build in the ```frontend/build``` folder for UrTurn to serve.
+
+
+### publish.yml
+
+This file will trigger the creation of a branch called ```publish``` and an automatic build of your frontend whenever a commit gets merged into your main branch, which UrTurn will then serve.

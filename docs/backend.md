@@ -36,13 +36,13 @@ If true, no new changes can be made to the board game state, no new players can 
 
 #### players: *Player[]*
 
-Initially empty, read-only.
+Initially empty.
 
 A list of the [player objects](#player) in the game in the order the players joined. Will update as players join and leave the game instance. 
 
 #### version: *int*
 
-Initially 0, read-only.
+Initially 0.
 
 The current version of the board game state. Incremented with every change. Is used to keep all players in sync with the current board game state.
 
