@@ -10,13 +10,13 @@ The "backend" for all games is compromised of four functions found in the highes
 
 ### BoardGame
 
-```json
+```ts
 {
-  "joinable": true,
-  "finished": false,
-  "players": "[]",
-  "version": 0,
-  "state": {}
+  joinable: boolean,
+  finished: boolean,
+  players: Player[],
+  version: number,
+  state: {}
 }
 ```
 
@@ -34,11 +34,11 @@ Initially false.
 
 If true, no new changes can be made to the board game state, no new players can join, and the game instance will show in the "Played Games" list. If false, the game will show in the "Active Games" list for players.
 
-#### players: *[ string ]*
+#### players: *Player[]*
 
 Initially empty, read-only.
 
-A list of the IDs of all the players in the game in the order they joined. Will update as players join and leave the game instance. 
+A list of the [player objects](#player) in the game in the order the players joined. Will update as players join and leave the game instance. 
 
 #### version: *int*
 
@@ -54,15 +54,26 @@ Can hold any valid JSON object and is only used internally in your game logic.
 
 ### BoardGameResult
 
-```json
+```ts
 {
-  "joinable": false,
-  "finished": false,
-  "state": {}
+  joinable: boolean,
+  finished: boolean,
+  state: {}
 }
 ```
 
 A JSON object that your functions can return - contains the aspects of the BoardGame that have been modified. Will be used to update your [BoardGame](#boardgame) object.
+
+### Player
+
+```ts
+{
+  id: string,
+  username: string
+}
+```
+
+An object representing a single player.
 
 ## Functions
 
@@ -81,23 +92,23 @@ Returns the [BoardGameResult](#boardgameresult). Use this function to initialize
 ### onPlayerJoin
 
 ```ts
-onPlayerJoin = (player: string, boardGame: object) => BoardGameResult
+onPlayerJoin = (player: Player, boardGame: object) => BoardGameResult
 ```
 
-Runs when a player joins the room. Reveals the ID of the player who joined and the current [BoardGame](#boardgame) state. Returns the [BoardGameResult](#boardgameresult).
+Runs when a player joins the room, including when the room is created (i.e. the player clicks *Play* or *Create Private Room*). Reveals the player who joined and the current [BoardGame](#boardgame) state. Returns the [BoardGameResult](#boardgameresult).
 
 ### onPlayerQuit
 
 ```ts
-onPlayerQuit = (player: string, boardGame: object) => BoardGameResult
+onPlayerQuit = (player: Player, boardGame: object) => BoardGameResult
 ```
 
-Runs when a player quits the game. A player **only** quits the game by manually clicking the ***quit*** button - closing the browser or tab will not end the game session. Reveals the ID of the player who quit and the current [BoardGame](#boardgame) state. Returns the [BoardGameResult](#boardgameresult).
+Runs when a player quits the game. A player **only** quits the game by manually clicking the ***quit*** button - closing the browser or tab will not end the game session. Reveals the player who quit and the current [BoardGame](#boardgame) state. Returns the [BoardGameResult](#boardgameresult).
 
 ### onPlayerMove
 
 ```ts
-onPlayerMove = (player: string, move: object, boardGame: object) => BoardGameResult
+onPlayerMove = (player: Player, move: object, boardGame: object) => BoardGameResult
 ```
 
-Runs when a player moves (i.e. when ```client.makeMove()``` is called). Reveals the ID of the player that made the move, the object containing the move, and the current [BoardGame](#boardgame) state. The move object is defined by you and can be any JSON object. Returns the [BoardGameResult](#boardgameresult).
+Runs when a player moves (i.e. when ```client.makeMove()``` is called). Reveals the player that made the move, the object containing the move, and the current [BoardGame](#boardgame) state. The move object is defined by you and can be any JSON object. Returns the [BoardGameResult](#boardgameresult).
