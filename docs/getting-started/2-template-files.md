@@ -20,4 +20,4 @@ This is where the frontend for our game will go. We are currently using React to
 
 ### publish.yml
 
-This file will trigger the creation of a branch called ```publish``` and an automatic build of your frontend whenever a commit gets merged into your main branch, which UrTurn will then serve.
+This file will trigger the creation of a branch called ```published``` and an automatic build of your frontend whenever a commit gets merged into your main branch, which UrTurn will then serve.
