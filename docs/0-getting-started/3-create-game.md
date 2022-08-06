@@ -511,4 +511,4 @@ You currently must refresh the Runner to see all "state" specific changes.
 
 :::
 
-[Here](https://github.com/turnbasedgames/tictactoe/tree/solution) is the finish tic-tac-toe game in production, which includes error handling, move validation, player validation, and more!
+[Here](https://github.com/turnbasedgames/tictactoe/tree/solution) is the finished tic-tac-toe game in production, which includes error handling, move validation, player validation, and more!
