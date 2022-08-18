@@ -92,6 +92,15 @@ const config = {
             ],
           },
           {
+            title: 'Client',
+            items: [
+              {
+                label: '@urturn/client',
+                to: '/docs/client-docs',
+              },
+            ],
+          },
+          {
             title: 'More',
             items: [
               {
